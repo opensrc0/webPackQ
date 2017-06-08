@@ -1,0 +1,44 @@
+@import "./helpers/_theme-variables";
+.m_input {
+	position: relative;
+
+	input {
+		padding: 26px 10px 10px;
+		width: 100%;
+		box-sizing: border-box;
+		border: none;
+		position: relative;
+		z-index: 22;
+		background: none;
+		height: 53px;
+		font-weight: bold;
+		font-size: $font-14;
+		color: $color-black-secondary;
+
+		&:focus + label {
+			top: 8px;
+			font-size: $font-12;
+			transition: $animation;
+		}
+	}
+	label {
+		position: absolute;
+		top: 18px;
+		z-index: 2;
+		left: 10px;
+		color: $color-inout;
+		text-transform: uppercase;
+		transition: $animation;
+	}
+	i.icon-down {
+		position: absolute;
+		right: 10px;
+		top: 18px;
+		color: $color-inout;
+	}
+	&.open label {
+		top: 8px;
+		font-size: $font-12;
+		transition: $animation;
+	}
+}

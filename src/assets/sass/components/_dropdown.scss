@@ -1,0 +1,57 @@
+.dropdown {
+	position: relative;
+
+	a {
+		position: relative;
+		z-index: 22;
+		background: none;
+		height: 53px;
+		font-weight: bold;
+		font-size: $font-14;
+		color: $color-black-secondary;
+		display: block;
+		padding: 26px 10px 10px;
+		box-sizing: border-box;
+	}
+
+	label {
+		position: absolute;
+		top: 18px;
+		z-index: 2;
+		left: 10px;
+		color: $color-inout;
+		text-transform: uppercase;
+		transition: $animation;
+	}
+	i.icon-down {
+		position: absolute;
+		right: 10px;
+		top: 18px;
+		color: $color-inout;
+	}
+	&.open label {
+		top: 8px;
+		font-size: $font-12;
+		transition: $animation;
+	}
+
+	ul {
+		position: absolute;
+		width: 100%;
+		background: $color-white;
+		border: $border-default;
+		display: none;
+		box-sizing: border-box;
+		z-index: 999;
+
+		li {
+			padding: 10px 6px;
+			border-bottom: $border-light-d;
+			cursor: pointer;
+
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+}

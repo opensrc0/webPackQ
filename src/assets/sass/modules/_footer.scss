@@ -1,0 +1,54 @@
+@import "./helpers/_theme-variables";
+.m_footer {
+	background: $color-white;
+	padding: 10px;
+	
+	p {
+		color: $color-black-tertiary;
+		font-size: $font-12;
+	}
+	.footerul {
+		margin: 15px 0px;
+
+		ul {
+			text-align: center;
+
+			li {
+				display: inline-block;
+				color: $color-black-secondary;
+				font-size: $font-12;
+				padding: 5px;
+
+				&:first-child {
+					font-weight: bold;
+				}
+
+				a {
+					color: $color-black-tertiary;
+				}
+			}
+		}
+		ul.footer-menu {
+			li {
+				&:first-child {
+					font-weight: normal;
+				}
+			}
+		} 
+	}
+	.footer-app {
+		text-align: center;
+		border-top: $border-light;
+		padding-top: 15px;
+
+		a {
+			color : $color-black-tertiary;
+			display: inline-block;
+			padding: 0px 5px;
+		}
+	}
+	.copyright {
+		color : $color-black-tertiary;
+		text-align: center;
+	}
+}

@@ -1,0 +1,153 @@
+@import "./theme/_theme";
+@import "./helpers/_theme-variables";
+@import "./modules/_radio";
+@import "./components/_dropdown";
+@import "./components/_input";
+@import "./components/_textarea";
+@import "./components/_uploadfile";
+@import "./components/_buttons";
+.vap {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	color: $color-black-secondary;
+	padding: 10px;
+	box-sizing: border-box;
+
+	.h_city {
+		h1 {
+			float: left;
+			font-size: 22px;
+			font-weight: bold;
+		}
+
+		.city {
+			float: right;
+			cursor: pointer;
+			min-width: 118px;
+
+			.icon-location {
+				color: $color-quikr-blue;
+				font-size: $font-18;
+				position: relative;
+				top: 2px;
+			}
+			i.icon-down {
+				top: 7px;
+			}
+		}
+	}
+	.iwant {
+		position: relative;
+		padding-left: 80px;
+		margin: 10px 0px 10px;
+
+		span {
+			position: absolute;
+			left: 0px;
+			color: #666666;
+		}
+		.raido {
+			float: left;
+			padding-right: 5px;
+
+			&:nth-child(4) {
+				padding-right: 0px;
+			}
+		}
+	}
+	.m_box {
+		background: $color-white;
+		/*border: $border-light-d;*/
+		margin-bottom: 10px;
+
+		.location {
+			position: relative;
+			padding-right: 90px;
+
+			.l_icon {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				width: 82px;
+				font-size: $font-14;
+				font-style: italic;
+				line-height: 15px;
+				color: $color-inout;
+
+				i {
+					float: left;
+					font-size: $font-30;
+					color: #ee3840;
+					line-height: 0px;
+				}
+			}
+		}
+		.u_img {
+			margin: 0px 10px 10px;
+		}
+	}
+	.a_box {
+		margin-bottom: 10px;
+		overflow: scroll;
+		overflow-y: hidden;
+
+		ul {
+			min-width: 1000px;
+
+			li {
+				float: left;
+				width: 90px;
+				border: $border-light-d;
+				background: $color-white;
+				text-align: center;
+				padding: 5px 3px;
+				margin-right: 5px;
+				cursor: pointer;
+
+				&:last-child {
+					margin-right: 0px;
+				}
+				&.active {
+					color: $color-quikr-blue;
+					border: $border-blue-d;
+				}
+
+				i {
+					display: block;
+					font-size: $font-30;
+					line-height: 0px;
+				}
+			}
+		}
+	}
+	.row {
+		.m_input, .dropdown {
+			float: left;
+			width: 50%;
+			box-sizing: border-box;
+		}
+		.dropdown {
+			border-left: $border-light-d;	
+		}
+		.price {
+			border-top: $border-light-d;	
+
+			.m_input:nth-child(1) {
+				width: 60%;
+			}
+			.m_input:nth-child(2) {
+				width: 40%;
+				background: #e9e9e9;
+			}
+		}
+	}
+	.yellow {
+		display: block;
+	}
+	.trm {
+		text-align: center;
+		padding-top: 5px;
+		color: $color-inout;
+	}
+}

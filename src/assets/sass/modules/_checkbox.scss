@@ -1,0 +1,32 @@
+input[type=checkbox] {
+	display:none;
+}
+input[type=checkbox] + label {
+	padding: 5px 5px 2px 19px;
+}
+input[type=checkbox] + label:before {
+	content: "";
+	width: 16px;
+	height: 16px;
+	border: 1px solid #999;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background-clip: padding-box;
+	position: absolute;
+	left: 0px;
+	top: 7px;
+	z-index: 2;
+	box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+input[type=checkbox]:checked + label:before {
+	font-family: "qhcustom" !important;
+	content:"\f10a";
+	color:white;
+	background-color: #008BCF;
+	text-align:center;
+	line-height: 15px;
+	box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+	font-size: 12px;
+	border: 1px solid #008BCF;
+	font-weight: bold;
+}

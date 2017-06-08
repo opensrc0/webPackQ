@@ -1,0 +1,165 @@
+@import "./theme/_theme";
+@import "./helpers/_theme-variables";
+@import "./components/_buttons";
+.p_ed {
+	background: $color-white;
+	margin-top: 10px;
+
+	.vap {
+		padding-left: 41px;
+		font-size: $font-18;
+		position: relative;
+		line-height: 20px;
+
+		span {
+			display: block;
+			font-size: $font-14;
+		}
+
+		i {
+			position: absolute;
+			left: 15px;
+			font-size: $font-20;
+			color: $color-quikr-green;
+
+		}
+	}
+}
+.vap {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	color: $color-black-secondary;
+	padding: 10px;
+	box-sizing: border-box;
+
+	h1 {
+		font-size: $font-22;
+		font-weight: bold;
+		text-align: center;
+
+		a {
+			font-size: $font-14;
+		}
+	}
+	.toph {
+		p {
+			font-size: $font-14;
+			color: $color-inout;
+			margin-bottom: 15px;
+		}
+	}
+	.m_box {
+		background: $color-white;
+		margin-bottom: 15px;
+
+		&.row {
+			border: solid 1px #e3e3e3;
+			border-top: solid 3px #0faa13;
+			padding: 10px;
+			border-radius: 3px;
+			position: relative;
+
+			&:nth-child(2) {
+				border: solid 1px #ffd700;
+				border-top: solid 3px #ffd700;
+			}
+
+			.premium {
+				float: left;
+				width: 50%;
+				line-height: 20px;
+
+				span {
+					display: block;
+					font-size: $font-16;
+					color: $color-black-secondary;
+
+					sup {
+						font-size: $font-10;
+					}
+
+					&.pricep {
+						font-size:  $font-22;
+						font-weight: bold;
+
+						i {
+							font-size:  $font-16;
+						}
+					}
+				}
+				small {
+					color: #999999;
+					font-size: $font-12;
+				}
+				&:nth-child(2) {
+					text-align: right;
+					padding-right: 8px;
+					box-sizing: border-box;
+
+					button {
+						display: inline-block;
+						width: 90px;
+						text-align: center;
+						margin-top: 6px;
+						background: #e1e1e1;
+						border: none;
+						padding: 8px 10px;
+						font-size: $font-12;
+						font-weight: bold;
+						border-radius: 3px;
+
+						&.active {
+							background: #008bcf;
+							color: #fff;
+						}
+					}
+					a {
+						display: inline-block;
+						width: 90px;
+						text-align: center;
+						margin-top: 3px;
+						text-decoration: underline;
+					}
+				}
+			}
+			.pind {
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				padding: 1px;
+
+				&:after {
+					position: absolute;
+					content: "";
+					width: 0;
+					height: 0;
+					border-top: 30px solid #f60;
+					border-left: 30px solid transparent;
+					right: 0px;
+					top: 0px;
+					z-index: 9;
+				}
+				img {
+					position: relative;
+					z-index: 99;
+				}
+			}
+		}
+	}
+	.prf {
+		margin-bottom: 15px;
+
+		span {
+			color: #666666;
+			font-size: $font-18;
+			display: block;
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+	.green {
+		display: block;
+	}
+}

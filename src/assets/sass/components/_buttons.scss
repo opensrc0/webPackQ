@@ -1,0 +1,60 @@
+@import "./helpers/_theme-variables";
+.yellow {
+	display: inline-block;
+	background: #fceb42;
+	color: #333333;
+	border: solid 2px #e1b70c;
+	border-radius: 3px;
+	padding: 10px;
+	font-size:  $font-16;
+	font-weight: bold;
+	text-align: center;
+
+	&:focus {
+		background: #e7d62d;
+	}
+}
+
+.blue {
+	display: inline-block;
+	background: #008bcf;
+	color: #fff;
+	border-radius: 3px;
+	padding: 10px;
+	font-size:  $font-14;
+	text-align: center;
+
+	&:focus {
+		background: #0d7ab3;
+	}
+}
+.blue-line {
+	display: inline-block;
+	background: #fff;
+	border: solid 1px #008bcf;
+	color: #333;
+	border-radius: 3px;
+	padding: 10px;
+	font-size:  $font-16;
+	text-align: center;
+
+	&:focus {
+		background: #008bcf;
+		color: #fff;
+	}
+}
+.green {
+	display: inline-block;
+	background: #0faa13;
+	color: #fff;
+	border-radius: 3px;
+	padding: 10px;
+	font-size:  $font-16;
+	text-align: center;
+	font-weight: bold;
+
+	&:focus {
+		background: #0d8f10;
+		color: #fff;
+	}
+}

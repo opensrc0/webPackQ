@@ -1,0 +1,26 @@
+
+@import "./helpers/_theme-variables";
+.u_img {
+	border-top: $border-light-d;
+	text-align: right;
+
+	span {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		font-size: $font-14;
+
+		input {
+			opacity: 0;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+		i {
+			position: relative;
+			top: 3px;
+			font-size: $font-20;
+			color: $color-quikr-blue;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@import "./helpers/_theme-variables";
+.m_textarea {
+	position: relative;
+
+	textarea {
+		padding: 3px 10px 10px;
+		width: 100%;
+		box-sizing: border-box;
+		border: none;
+		position: relative;
+		background: none;
+		min-height: 53px;
+		font-size: $font-14;
+		color: $color-black-secondary;
+	}
+	label {
+		color: $color-inout;
+		text-transform: uppercase;
+		transition: $animation;
+		display: block;
+		padding: 10px 10px 0px;
+	}
+}

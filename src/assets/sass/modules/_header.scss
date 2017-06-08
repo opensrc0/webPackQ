@@ -1,0 +1,13 @@
+@import "./helpers/_theme-variables";
+.m_header {
+	background: $color-white;
+	padding: 10px 5px;
+
+	.l_menu {
+		float: left;
+	}
+
+	.r_post {
+		float: right;
+	}
+}

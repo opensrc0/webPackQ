@@ -1,0 +1,44 @@
+@import "./theme/_theme";
+@import "./helpers/_theme-variables";
+@import "./modules/_radio";
+@import "./components/_input";
+@import "./components/_buttons";
+.vap {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	color: $color-black-secondary;
+	padding: 10px;
+	box-sizing: border-box;
+
+	h1 {
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 23px;
+		color: $color-black-secondary;
+	}
+
+	.iwant {
+		position: relative;
+		margin: 10px 0px 15px;
+
+		.raido {
+			padding-right: 5px;
+			margin: 5px 0px;
+
+			&:nth-child(4) {
+				padding-right: 0px;
+			}
+		}
+	}
+	.m_box {
+		background: $color-white;
+		margin-bottom: 10px;
+	}
+	.blue, .blue-line {
+		display: block;
+	}
+	.blue-line {
+		margin-top: 10px;
+	}
+}

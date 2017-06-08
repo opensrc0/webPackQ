@@ -1,5 +1,8 @@
 // require('./app.css')
-require('./app.scss')
+require('./assets/sass/_premium.scss')
+require('./assets/sass/_vap_postad.scss')
+
+require('./assets/js/papMobileSecondPage')
 
 console.log('index.js');
 
