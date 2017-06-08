@@ -4,7 +4,9 @@ class form2 {
 
     constructor() {
         
-        // creating a private variable _map
+        /**
+         * creating a private variable _map
+         */ 
         let _map = {};
 
         this.availableForm = (data) => {
@@ -39,14 +41,25 @@ class form2 {
             _map.furnishing = data
         }
 
-        this.mapValues = (data) => {
+        this.getValues = () => {
             return _map
         }
 
         this.registerEvents = () => {
             document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.floorNumber(event.target.value))
             document.querySelector("#flatNumber").addEventListener('keyup', (event) => this.flatNumber(event.target.value))
-            document.querySelector("#bathRooms").addEventListener('click', (event) => this.bathRooms(event.target.innerHTML))
+            
+            let clickEvents = document.querySelectorAll("#bathRooms, #balconies");
+            
+            Array.from(clickEvents).forEach(function(getElement) {
+                getElement.addEventListener('click', (event) => {
+                    let perentId = event.target.parentNode.id;                          // Get Parent Id
+                    this[perentId](event.target.innerHTML);                             // Set Value of selected query like bathrooms balconies etc
+                    removeActiveClass(event.target.closest(`#${perentId}`).children);   // remove active class from the list in front end
+                    addActiveClass(event.target);                                       // add active class in selected element
+                })
+            },this); 
+            
             // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
             // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
             // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
@@ -55,11 +68,21 @@ class form2 {
             })
         }
         this.registerEvents()
+
+        let removeActiveClass = (list) => {
+            for(let i = 0; i < list.length; i++) {
+                list[i].classList.remove('active');
+            }
+        }
+
+        let addActiveClass = (target) => {
+            target.classList.add('active');
+        }
     }
 }
 
-var form2Obj = new form2({})
+var form2Obj = new form2()
 
 setInterval(()=>{
-    console.log(form2Obj.mapValues());
+    console.log(form2Obj.getValues());
 }, 3000)
