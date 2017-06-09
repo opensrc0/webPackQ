@@ -16,7 +16,7 @@ function ajaxCall (url, requestType, data, sync = true) {
             reject(new Error("Network Error"));
         }
 
-        http.send(JSON.stringify(data));
+        http.send(atob(JSON.stringify(data)));
     })
 
 }

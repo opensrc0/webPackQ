@@ -1,88 +1,47 @@
 import $http from './ajaxPromise'
-
+import getterSetter from './getterSetter'
+import services from './services'
 class form2 {
 
     constructor() {
+
+         document.querySelector("#floorNumber").addEventListener('keyup', (event) => getterSetter.floorNumber(event.target.value))
+         document.querySelector("#flatNumber").addEventListener('keyup', (event) => getterSetter.flatNumber(event.target.value))
+
+        // Add id in ul tag and pass here for any click type property in front end
+        let clickEventsSingleValue = document.querySelectorAll("#bathRooms, #balconies , #unitFacing");
         
-        /**
-         * creating a private variable _map
-         */ 
-        let _map = {};
+        // We can use built in loop function on like-array using 'Array.from'
+        Array.from(clickEventsSingleValue).forEach(function(getElement) {
+            getElement.addEventListener('click', (event) => {
+                // Get Parent Id of targetted element
+                let perentId = event.target.closest('ul').id;
 
-        this.availableForm = (data) => {
-            _map.availableFrom = data
-        }
+                // Set li as a targetting element to get data-attr value
+                let getTargetLi = event.target.nodeName!='LI' ? event.target.closest('li') : event.target;
 
-        this.floorNumber = (data) => {
-            _map.floorNumber = data
-        }
+                // Set Value of selected query like bathrooms balconies etc
+                getterSetter[perentId](getTargetLi.getAttribute('data-attr'));
 
-        this.flatNumber = (data) => {
-            _map.flatNumber = data
-        }
-
-        this. unitFacing = (data) => {
-            _map.unitFacing = data
-        }
-
-        this.bathRooms = (data) => {
-            _map.bathRooms = data
-        }
-
-        this.balconies = (data) => {
-            _map.balconies = data
-        }
-
-        this.amenities = (data) => {
-            _map.amenities = data
-        }
-
-        this.furnishing = (data) => {
-            _map.furnishing = data
-        }
-
-        this.getValues = () => {
-            return _map
-        }
-
-        this.registerEvents = () => {
-            document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.floorNumber(event.target.value))
-            document.querySelector("#flatNumber").addEventListener('keyup', (event) => this.flatNumber(event.target.value))
-            
-            let clickEvents = document.querySelectorAll("#bathRooms, #balconies");
-            
-            Array.from(clickEvents).forEach(function(getElement) {
-                getElement.addEventListener('click', (event) => {
-                    let perentId = event.target.parentNode.id;                          // Get Parent Id
-                    this[perentId](event.target.innerHTML);                             // Set Value of selected query like bathrooms balconies etc
-                    removeActiveClass(event.target.closest(`#${perentId}`).children);   // remove active class from the list in front end
-                    addActiveClass(event.target);                                       // add active class in selected element
-                })
-            },this); 
-            
-            // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
-            // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
-            // document.querySelector("#floorNumber").addEventListener('keyup', (event) => this.availableForm(event.target.value))
-            document.querySelector("#papUpdate").addEventListener('click', (event) => {
-                $http.ajaxCall('test.php', 'POST', this._map);
+                // Remove active class from the list in the front end       
+                services.removeActiveClass(document.querySelectorAll(`#${perentId} li`));
+                
+                // Add active class in selected element
+                services.addActiveClass(getTargetLi);
             })
-        }
-        this.registerEvents()
+        },this); 
+        
+        document.querySelector("#papUpdate").addEventListener('click', (event) => {
+            $http.ajaxCall('test.php', 'POST', _map);
+        })
 
-        let removeActiveClass = (list) => {
-            for(let i = 0; i < list.length; i++) {
-                list[i].classList.remove('active');
-            }
-        }
-
-        let addActiveClass = (target) => {
-            target.classList.add('active');
-        }
     }
 }
 
 var form2Obj = new form2()
 
+Object.preventExtensions(form2Obj);
+
 setInterval(()=>{
-    console.log(form2Obj.getValues());
+    console.log(getterSetter.getValues());
 }, 3000)
